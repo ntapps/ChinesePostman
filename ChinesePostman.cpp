@@ -59,7 +59,11 @@ ChinesePostman::ChinesePostman(string filename)
 
 void ChinesePostman::solve()
 {
-	;
+	findLeastCostPaths();
+	checkValid();
+	findOddVertices();
+	findFeasible();
+	while (improvements());
 }
 
 double ChinesePostman::optimalCost()
