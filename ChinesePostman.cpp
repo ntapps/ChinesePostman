@@ -73,7 +73,14 @@ double ChinesePostman::optimalCost()
 		return -1;
 	}
 
-	return 0.0;
+	double phi = 0;
+	for (int i=0; i<nVertices; i++) {
+		for (int j=0; j<nVertices; j++) {
+			phi += cost[i][j]*repEdge[i][j];
+		}
+	}
+
+	return basicCost * phi;
 }
 
 void ChinesePostman::print()
@@ -146,7 +153,18 @@ void ChinesePostman::findOddVertices()
 
 void ChinesePostman::findFeasible()
 {
-	;
+	// Maybe this function stays the same since we added the equivalent of directed edges going both ways?
+	// Now that I think of it...will have to cancel paths going in both directions when deciding the path.
+
+	// delete next 3 lines to be faster, but non-reentrant (not sure what that means right now)
+	vector<int> d = degree;
+
+	for (int u=0; u<odd.size(); u++) {
+		int i = odd[u];
+		for (int v=0; v<odd.size(); v++) {
+			// I don't know what's going on in this function anymore...;
+		}
+	}
 }
 
 bool ChinesePostman::improvements()
