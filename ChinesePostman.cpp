@@ -101,7 +101,20 @@ void ChinesePostman::addEdge(string lab, int u, int v, double c)
 
 void ChinesePostman::findLeastCostPaths()
 {
-	;
+	for (int k=0; k<nVertices; k++) {
+		for (int i=0; i<nVertices; i++) {
+			if (defined[i][k]) {
+				for (int j=0; j<nVertices; j++) {
+					if (defined[k][j] && (!defined[i][j] || cost[i][j] > cost[i][k] + cost[k][j])) {
+						path[i][j] = path[i][k];
+						cost[i][j] = cost[i][k] + cost[k][j];
+						defined[i][j] = true;
+						if (i == j && cost[i][j] < 0) return; // stop on negative cycle
+					}
+				}
+			}
+		}
+	}
 }
 
 void ChinesePostman::checkValid()
