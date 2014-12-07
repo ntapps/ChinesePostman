@@ -137,7 +137,11 @@ void ChinesePostman::checkValid()
 
 void ChinesePostman::findOddVertices()
 {
-	;
+	for (int i=0; i<nVertices; i++) {
+		if (degree[i] % 2 != 0) {
+			odd.push_back(i);
+		}
+	}
 }
 
 void ChinesePostman::findFeasible()
