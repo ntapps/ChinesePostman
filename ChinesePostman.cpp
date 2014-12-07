@@ -174,5 +174,9 @@ bool ChinesePostman::improvements()
 
 int ChinesePostman::findPath(int from, vector<vector<int>>repEd)
 {
-	return 0;
+	for (int i=0; i<nVertices; i++) {
+		if (repEdge[from][i] > 0) return i;
+	}
+
+	return NONE;
 }
