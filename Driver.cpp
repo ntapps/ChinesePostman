@@ -2,6 +2,7 @@
 
 int main()
 {
-	ChinesePostman("test1.txt");
+	ChinesePostman cp("test1.txt");
+	cp.solve();
 	return 0;
 }

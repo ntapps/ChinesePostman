@@ -119,7 +119,20 @@ void ChinesePostman::findLeastCostPaths()
 
 void ChinesePostman::checkValid()
 {
-	;
+	for (int i=0; i<nVertices; i++) {
+		for (int j=0; j<nVertices; j++) {
+			if (!defined[i][j]) {
+				cout << "Error: Graph is not strongly connected." << endl; // not sure what this is supposed to mean.
+				cout << "Exiting..." << endl;
+				exit(1);
+			}
+		}
+		if (cost[i][i] < 0) {
+			cout << "Error: Graph has a negative weight cycle." << endl;
+			cout << "Exiting..." << endl;
+			exit(1);
+		}
+	}
 }
 
 void ChinesePostman::findOddVertices()
