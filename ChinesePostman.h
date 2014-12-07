@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 
 #ifndef CHINESEPOSTMAN_H
 #define CHINESEPOSTMAN_H
@@ -21,7 +22,7 @@ public:
 
 private:
 	// Private Member Functions
-	void addEdge(std::string lab, int u, int v, double cost);
+	void addEdge(std::string lab, int u, int v, double c);
 	void findLeastCostPaths();									// Floyd-Warshall Algorithm?
 	void checkValid();											// Determines if the graph is valid
 	void findOddVertices();
