@@ -162,7 +162,7 @@ void ChinesePostman::findFeasible()
 	do {
 		permutations.push_back(temp);
 		for (int i=0; i<temp.size(); i+=2) {
-			c += temp[i] + temp[i+1];
+			c += cost[temp[i]][temp[i+1]];
 		}
 		costSum.push_back(c);
 		c = 0;
@@ -179,6 +179,11 @@ void ChinesePostman::findFeasible()
 		int x = permutations[min][i];
 		int y = permutations[min][i+1];
 		
+		edges[x][y]++;
+		edges[y][x]++;
+		degree[x]++;
+		degree[y]++;
+
 	/*	addEdge(label[x][y], x, y, cost[x][y]);
 		addEdge(label[y][x], y, x, cost[y][x]);*/
 	}
