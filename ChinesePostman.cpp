@@ -57,11 +57,12 @@ ChinesePostman::ChinesePostman(string filename)
 
 void ChinesePostman::solve()
 {
+	cout << "Solving..." << endl;
 	findLeastCostPaths();
 	checkValid();
 	findOddVertices();
 	findFeasible();
-	while (improvements());
+	cout << "Solved." << endl;
 }
 
 double ChinesePostman::optimalCost()
@@ -163,11 +164,6 @@ void ChinesePostman::findFeasible()
 			// I don't know what's going on in this function anymore...;
 		}
 	}
-}
-
-bool ChinesePostman::improvements()
-{
-	return false;
 }
 
 int ChinesePostman::findPath(int from, vector<vector<int>>repEd)
