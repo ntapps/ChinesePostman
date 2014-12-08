@@ -48,8 +48,6 @@ ChinesePostman::ChinesePostman(string filename)
 		addEdge(lab, u, v, w);
 		addEdge(lab, v, u, w); // because it's an undirected graph
 		basicCost += w;
-		edges[u][v]++;
-		edges[v][u]++;
 		degree[u]++;
 		degree[v]++;
 	}
@@ -102,8 +100,8 @@ void ChinesePostman::addEdge(string lab, int u, int v, double c)
 		path[u][v] = v;
 	}
 	edges[u][v]++;
-	//edges[u]++;			// Only for directed graphs. Must comment out line in constructor
-	//edges[v]++;			// Only for directed graphs. Must comment out line in constructor
+	//degree[u]++;			// Only for directed graphs. Must comment out line in constructor
+	//degree[v]++;			// Only for directed graphs. Must comment out line in constructor
 }
 
 void ChinesePostman::findLeastCostPaths()
