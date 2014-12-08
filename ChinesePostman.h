@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <algorithm>
 
 #ifndef CHINESEPOSTMAN_H
 #define CHINESEPOSTMAN_H

@@ -152,18 +152,49 @@ void ChinesePostman::findOddVertices()
 
 void ChinesePostman::findFeasible()
 {
+	vector<vector<int>> permutations;
+	vector<double> costSum;
+	vector<int> temp = odd;
+	double c = 0;
+
+	sort(temp.begin(), temp.end());
+
+	do {
+		permutations.push_back(temp);
+		for (int i=0; i<temp.size(); i+=2) {
+			c += temp[i] + temp[i+1];
+		}
+		costSum.push_back(c);
+		c = 0;
+	} while (next_permutation(temp.begin(), temp.end()));
+
+	int min = 0;
+	for (int i=1; i<costSum.size(); i++) {
+		if (costSum[i] < costSum[min]) {
+			min = i;
+		}
+	}
+
+	for (int i=0; i<permutations[min].size(); i+=2) {
+		int x = permutations[min][i];
+		int y = permutations[min][i+1];
+		
+	/*	addEdge(label[x][y], x, y, cost[x][y]);
+		addEdge(label[y][x], y, x, cost[y][x]);*/
+	}
+
 	// Maybe this function stays the same since we added the equivalent of directed edges going both ways?
 	// Now that I think of it...will have to cancel paths going in both directions when deciding the path.
 
 	// delete next 3 lines to be faster, but non-reentrant (not sure what that means right now)
-	vector<int> d = degree;
+	//vector<int> d = degree;
 
-	for (int u=0; u<odd.size(); u++) {
-		int i = odd[u];
-		for (int v=0; v<odd.size(); v++) {
-			// I don't know what's going on in this function anymore...;
-		}
-	}
+	//for (int u=0; u<odd.size(); u++) {
+	//	int i = odd[u];
+	//	for (int v=0; v<odd.size(); v++) {
+	//		// I don't know what's going on in this function anymore...;
+	//	}
+	//}
 }
 
 int ChinesePostman::findPath(int from, vector<vector<int>>repEd)
