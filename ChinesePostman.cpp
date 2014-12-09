@@ -61,7 +61,7 @@ void ChinesePostman::solve()
 	findLeastCostPaths();
 	checkValid();
 	findOddVertices();
-	findFeasible();
+	makeEulerian();
 	cout << "Solved." << endl;
 }
 
@@ -150,7 +150,7 @@ void ChinesePostman::findOddVertices()
 	}
 }
 
-void ChinesePostman::findFeasible()
+void ChinesePostman::makeEulerian()
 {
 	vector<vector<int>> permutations;
 	vector<double> costSum;

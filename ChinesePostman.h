@@ -27,8 +27,7 @@ private:
 	void findLeastCostPaths();									// Floyd-Warshall Algorithm?
 	void checkValid();											// Determines if the graph is valid
 	void findOddVertices();
-	void findFeasible();										// Not sure what this does yet...find a path from one odd node to another?
-																// Maybe the structure of this function changes since we are doing undirected
+	void makeEulerian();										// Add path's to make Eulerian Graph
 	int findPath(int from, std::vector<std::vector<int>>repEd);	// find a path between odd vertices. Used in print()
 
 	// Member variables
