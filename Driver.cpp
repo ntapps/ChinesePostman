@@ -4,6 +4,6 @@ int main()
 {
 	ChinesePostman cp("test1.txt");
 	cp.solve();
-	//cp.print();
+	cp.printEuler();
 	return 0;
 }

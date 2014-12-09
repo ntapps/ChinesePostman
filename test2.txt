@@ -53,7 +53,7 @@
 6 40 3 Estella_Ave
 40 41 3 Estella_Ave
 1 7 5 Curtin_Ave
-7 42  7 Curtin_Ave
+7 42 7 Curtin_Ave
 2 8 3 Beltzhoover_Ave
 8 19 4 Beltzhoover_Ave
 19 30 3 Beltzhoover_Ave
@@ -61,7 +61,7 @@
 9 20 4 Harcourt_Way
 20 31 3 Harcourt_Way
 31 46 3 Harcourt_Way
-10 21 4  Zara_St 
+10 21 4 Zara_St 
 21 32 3 Zara_St
 32 47 3 Zara_St
 11 22 4 Millbridge_St
@@ -71,9 +71,9 @@
 23 34 3 Orient_Way
 34 49 3 Orient_Way
 3 13 4 Walter_St
-13 24 Walter_St
-24 35 Walter_St
-35 50 Walter_St
+13 24 4 Walter_St
+24 35 3 Walter_St
+35 50 3 Walter_St
 14 25 4 Helen_Way
 25 36 3 Helen_Way
 36 51 3 Helen_Way
