@@ -59,7 +59,7 @@ void ChinesePostman::solve()
 {
 	cout << "Solving..." << endl;
 	findLeastCostPaths();
-	checkValid();
+	//checkValid();
 	findOddVertices();
 	makeEulerian();
 	cout << "Solved." << endl;
@@ -187,19 +187,6 @@ void ChinesePostman::makeEulerian()
 	/*	addEdge(label[x][y], x, y, cost[x][y]);
 		addEdge(label[y][x], y, x, cost[y][x]);*/
 	}
-
-	// Maybe this function stays the same since we added the equivalent of directed edges going both ways?
-	// Now that I think of it...will have to cancel paths going in both directions when deciding the path.
-
-	// delete next 3 lines to be faster, but non-reentrant (not sure what that means right now)
-	//vector<int> d = degree;
-
-	//for (int u=0; u<odd.size(); u++) {
-	//	int i = odd[u];
-	//	for (int v=0; v<odd.size(); v++) {
-	//		// I don't know what's going on in this function anymore...;
-	//	}
-	//}
 }
 
 int ChinesePostman::findPath(int from, vector<vector<int>>repEd)
